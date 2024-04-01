@@ -1,0 +1,28 @@
+{{>layout/header}}
+
+<table class="table">
+    <thead>
+
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Title</th>
+        <th scope="col">Content</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#article}}
+        <tr>
+            <th >{{id}}</th>
+            <th >{{title}}</th>
+            <th >{{content}}</th>
+        </tr>
+    {{/article}}
+    </tbody>
+</table>
+
+<a href="/articles/{{article.id}}/edit" class="bt btn-primary">Edit</a>
+<a href="/articles/{{article.id}}/delete" class="bt btn-primary">delete</a>
+<a href="/articles">Go to Article</a>
+
+{{>comments/_comments}} <!-- 상세 페이지에 댓글 뷰 파일 삽입 -->
+{{>layout/footer}}
